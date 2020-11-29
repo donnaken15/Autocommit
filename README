@@ -1,0 +1,93 @@
+
+ ------------------
+
+   X------------x
+   | Autocommit |
+   X------------X
+
+ ------------------
+
+  They tell you to "commit often," so we'll do that for you!
+
+  Simply add Autocommit as a cron
+  job or Windows Schedule task, and
+  continue your projects while this
+  script submits all your progress.
+
+  This tool also gives names to
+  commits that contain summaries
+  of your changes.
+
+ ------------------
+
+  Usage:
+
+   autocmt repo_dir (-p)
+
+   -p    | Push with commits
+             (best ran on a bidaily schedule or one
+			    correlated with your work time)
+
+  Example:
+
+   autocmt /mnt/e/work/myrepo/
+
+  Output:
+
+   (user) committed 1 day ago
+   'autocmt: main.cpp: "...{puts("Hello, World!");}...", MyProject.sln: "...","MyProject2.vcxproj","{..." '
+
+  cron example:
+
+   30 17 * * 0 autocmt /mnt/e/MyProject
+   10 13 * * 1 autocmt /mnt/e/MyProject -p
+   30 17 * * 2 autocmt /mnt/e/MyProject
+   10 13 * * 3 autocmt /mnt/e/MyProject -p
+   30 17 * * 4 autocmt /mnt/e/MyProject
+   ...
+
+  Here, on one day, files are committed at 5:30 PM,
+  and on another day, files are committed and pushed
+  at 1:10 PM, and so on, that is if changes were made
+  at all.
+
+ ------------------
+
+  developed by donnaken15
+
+  This is also my first try at making
+  a shell script geared towards Linux
+  in terms of testing and writing it,
+  via WSL and MINGW.
+
+ ------------------
+
+  Optional TODOs:
+   wait until files
+   being committed
+   are not in use
+   anymore (thought
+   of this with minecraft
+   worlds when playing lol)
+
+   fix using script with CR LF
+   apparently it messes up with
+   MINGW interpreting CRs as
+   commands or something
+
+   somehow installer thing
+   that chmod +x's the script
+   and/or moves it to bin
+   if necessary
+
+   make random text selector
+   better based on length,
+   which would probably be
+   so much easier in an actual
+   programming language
+
+   identify newline changes
+   and write about that instead
+   (impossible)
+
+
