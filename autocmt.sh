@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# == 0 ] ; then
+if [ $# == 0 ]; then
 	echo "No arguments specified"
 	echo ""
 	# ^ how to line break
@@ -44,3 +44,7 @@ do
 done
 git add .
 git commit -m "$(</tmp/autocmt.msg)"
+
+if [ "$2" == "-p" ]; then
+	git push
+fi
