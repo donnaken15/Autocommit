@@ -39,7 +39,7 @@ for NEWFILES in $(</tmp/autocmt.lst)
 do
 	echo -n "$NEWFILES: ..." >> /tmp/autocmt.msg
 	a=$RANDOM/4000+1
-	echo -n $(cat $NEWFILES | awk -F: '{ printf $1 }' | cut -c$a-$(echo "$a+16" | bc)) >> /tmp/autocmt.msg
+	echo -n $(awk -F: '{ printf $1 }' $NEWFILES | cut -c$a-$(echo "$a+16" | bc)) >> /tmp/autocmt.msg
 	echo -n "... " >> /tmp/autocmt.msg
 done
 git add .

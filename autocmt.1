@@ -1,0 +1,43 @@
+.TH man 8 "29 Nov 2020" "0.3" "autocmt(1)"
+.SH NAME
+Autocommit
+.SH SYNPOSIS
+.B autocmt
+.RB { REPO_DIR }
+.RB [ -p ]
+.SH DESCRIPTION
+.B autocmt
+A simple script to let all your work in
+.B git
+be submitted automatically.
+.SH USAGE
+.TP
+.B -p
+Push changes with new commits
+
+.SH SETUP
+.SS CRON
+.TP
+Run
+.B crontab -e
+and add the command with your scheduled time like so:
+.TP
+.B 00 16 *  *  *  autocmt ~/Documents/MyProject
+
+.SS WINDOWS
+.TP
+Open Windows Task Scheduler and create a new task,
+add a constant trigger time, like daily, and add
+Autocommit as an action with the appropriate
+arguments. With WSL, set executable to
+.B C:\\\Windows\\\System32\\\wsl.exe
+with arguments
+.B /path/to/autocmt.sh /path/to/repo
+.TP
+It's recommended that your schedule has an odd\-number pattern of pushing changes instead of having no scheduled job to do that.
+
+.SH COPYRIGHT
+.PP
+Copyright 2020 Wesley Kennedy
+.SH AUTHOR
+donnaken15 (wesley@gmx.it)

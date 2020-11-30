@@ -88,6 +88,7 @@
 
    identify newline changes
    and write about that instead
-   (impossible)
+   if no actual additions were
+   made (impossible)
 
-
+   exclude binary reading
