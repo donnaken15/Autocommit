@@ -92,3 +92,6 @@
    made (impossible)
 
    exclude binary reading
+   
+   randomize order of files and
+   shorten if there's a lot
